@@ -82,6 +82,7 @@ body {
   font-size:18px;
   border:0;
   box-shadow:0;
+  transition:ease-in-out .2s color;
 }
 
 .menu button.active {
@@ -98,7 +99,7 @@ body {
   margin:20px 0;
   background-repeat:no-repeat;
   background-size:70px 70px;
-  background-position:90% 0%;
+  background-position:90% -10%;
 }
 
 .activity-header {
@@ -131,12 +132,24 @@ body {
   background-image:url('./images/icon-self-care.svg');
 }
 
+.dots {
+  color:#fff;
+  height:20px;
+  width:20px;
+  margin-top:5px;
+}
 
 .activity-main-box{
-
   background-color:hsl(235, 46%, 20%);
   border-radius:20px;
   padding:30px 20px 25px 20px;
+  transition:ease-in-out .2s background-color;
+}
+
+
+.activity-main-box:hover {
+  background-color:hsl(235, 35%, 28%);
+  cursor:pointer;
 }
 
 .activity-title, .activity-details {
@@ -162,7 +175,83 @@ body {
   color:hsl(236, 100%, 87%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media only screen and (min-width: 1150px) {
+
+  .App {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top:0;
+  }
+
+  .container  {
+    min-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 30px;
+    row-gap: 30px;
+    width:1000px;
+  }
+
+  .user-card {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: span row2-start;
+    height:100%;
+  }
+
+  .user-main-box  {
+    flex-direction:column;
+    align-items:flex-start;
+    height:275px
+  }
+
+  .avatar {
+    margin-left:0;
+  }
+
+  .menu ul {
+    flex-direction:column;
+    height:120px;
+    padding:0 20px;
+  }
+
+  .user-info {
+    margin-left:0;
+    margin-top:35px;
+  }
+  .user-info h3 {
+    font-size:42px;
+  }
+
+  .activity-card {
+    margin:0;
+  }
+
+  .activity-main-box {
+    height:130px;
+    padding:30px;
+  }
+
+  .activity-card {
+    height:100px;
+  }
+
+  .activity-header {
+    height:45px;
+  }
+
+  .activity-details {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .activity-details p.current {
+    font-size:50px;
+  }
 
 }
 
