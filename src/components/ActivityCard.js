@@ -4,6 +4,21 @@ export default function ActivityCard({ timeframe, activity }) {
 
     const t = timeframe;
 
+    function findPhrase() {
+        let prevPhrase = '';
+        if (timeframe === 'weekly') {
+            prevPhrase = 'Last Week'
+        }
+        else if (timeframe === 'daily') {
+            prevPhrase = 'Yesterday'
+        }
+        else if (timeframe === 'monthly') {
+            prevPhrase = 'Last Month'
+        }
+
+        return prevPhrase
+    }
+
     function createId(x) {
         return x
             .toLowerCase()
@@ -29,7 +44,7 @@ export default function ActivityCard({ timeframe, activity }) {
                 {activity.timeframes[t] ?
                     <div class="activity-details">
                         <p className="current">{activity.timeframes[t].current}hrs</p>
-                        <p className="previous">Last Week - {activity.timeframes[t].previous}hrs</p>
+                        <p className="previous">{findPhrase()} - {activity.timeframes[t].previous}hrs</p>
                     </div>
                     : ''
                 }
