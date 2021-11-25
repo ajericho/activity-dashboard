@@ -4,16 +4,16 @@ import avatar from '../images/image-jeremy.png';
 export default function UserCard({ timeframe, switchDaily, switchWeekly, switchMonthly }) {
     return (
         <div className="user-card">
-            <div class="user-main-box">
-                <div class="user-avatar">
+            <div className="user-main-box">
+                <div className="user-avatar">
                     <img src={avatar} alt='Jeremy Robson' />
                 </div>
-                <div class="user-info">
+                <div className="user-info">
                     <p>Report for</p>
                     <h3>Jeremy Robson</h3>
                 </div>
             </div>
-            <div class="menu">
+            <div className="menu">
                 <ul>
                     <li>
                         <button

@@ -30,9 +30,9 @@ export default function ActivityCard({ timeframe, activity }) {
 
     return (
         <div className="activity-card" id={createId(activity.title)} >
-            <div class="activity-header" />
-            <div class="activity-main-box">
-                <div class="activity-title">
+            <div className="activity-header" />
+            <div className="activity-main-box">
+                <div className="activity-title">
                     <h4>{activity.title}</h4>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" className="dots" viewBox="0 0 20 20" fill="currentColor">
@@ -42,7 +42,7 @@ export default function ActivityCard({ timeframe, activity }) {
                 </div>
 
                 {activity.timeframes[t] ?
-                    <div class="activity-details">
+                    <div className="activity-details">
                         <p className="current">{activity.timeframes[t].current}hrs</p>
                         <p className="previous">{findPhrase()} - {activity.timeframes[t].previous}hrs</p>
                     </div>
